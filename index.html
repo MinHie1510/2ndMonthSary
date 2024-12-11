@@ -8,10 +8,18 @@
 </head>
 
 <body>
-    <audio autoplay controls>
-        <source src="magnetic.mp3" type="audio/mpeg">
+    <audio id="myAudio" controls>
+        <source src="assets/audio/your-audio-file.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ phát âm thanh.
     </audio>
 </body>
+<script>
+    window.onload = function () {
+        const audio = document.getElementById('myAudio');
+        audio.play().catch((error) => {
+            console.log('Autoplay bị chặn bởi trình duyệt:', error);
+        });
+    };
+</script>
 
 </html>
